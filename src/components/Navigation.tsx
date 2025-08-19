@@ -40,7 +40,9 @@ export default function Navigation() {
                 </a>
               ))}
               <Button variant="hero" size="sm">
-                Get Started
+                <a href="mailto:contact@datavista.co.uk" className="text-white">
+                  Get Started
+                </a>
               </Button>
             </div>
           </div>
@@ -70,11 +72,13 @@ export default function Navigation() {
                   {item.name}
                 </a>
               ))}
-              <div className="px-3 py-2">
-                <Button variant="hero" size="sm" className="w-full">
-                  Get Started
-                </Button>
-              </div>
+                <div className="px-3 py-2">
+                  <Button variant="hero" size="sm" className="w-full">
+                    <a href="mailto:contact@datavista.co.uk" className="text-white">
+                      Get Started
+                    </a>
+                  </Button>
+                </div>
             </div>
           </div>
         )}

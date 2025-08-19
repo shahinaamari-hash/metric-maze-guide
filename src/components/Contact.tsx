@@ -16,7 +16,8 @@ const contactOptions = [
     icon: Mail,
     title: "Email Us",
     description: "Get a detailed proposal within 24 hours",
-    action: "hello@datavista.agency",
+    action: "contact@datavista.co.uk",
+    href: "mailto:contact@datavista.co.uk",
     primary: true
   },
   {
@@ -24,6 +25,7 @@ const contactOptions = [
     title: "Book a Call",
     description: "30-minute strategy session to discuss your needs",
     action: "Schedule Free Consultation",
+    href: "https://calendly.com/datavista",
     primary: false
   },
   {
@@ -31,6 +33,7 @@ const contactOptions = [
     title: "Quick Questions?",
     description: "Chat with our team for immediate answers",
     action: "Start Live Chat",
+    href: "mailto:contact@datavista.co.uk?subject=Quick Question",
     primary: false
   }
 ];
@@ -78,23 +81,31 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
             <div className="space-y-6 mb-12">
               {contactOptions.map((option, index) => (
-                <Card key={index} className={`cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ${option.primary ? 'ring-2 ring-primary/20' : ''}`}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className={`p-3 rounded-lg flex-shrink-0 ${option.primary ? 'bg-gradient-primary' : 'bg-accent/20'}`}>
-                        <option.icon className={`h-6 w-6 ${option.primary ? 'text-white' : 'text-accent'}`} />
-                      </div>
-                      <div className="flex-grow">
-                        <h4 className="font-semibold text-lg mb-1">{option.title}</h4>
-                        <p className="text-muted-foreground mb-3">{option.description}</p>
-                        <div className="flex items-center text-primary font-medium">
-                          <span>{option.action}</span>
-                          <ArrowRight className="h-4 w-4 ml-2" />
+                <a 
+                  key={index} 
+                  href={option.href}
+                  target={option.title === "Book a Call" ? "_blank" : undefined}
+                  rel={option.title === "Book a Call" ? "noopener noreferrer" : undefined}
+                  className="block"
+                >
+                  <Card className={`cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ${option.primary ? 'ring-2 ring-primary/20' : ''}`}>
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className={`p-3 rounded-lg flex-shrink-0 ${option.primary ? 'bg-gradient-primary' : 'bg-accent/20'}`}>
+                          <option.icon className={`h-6 w-6 ${option.primary ? 'text-white' : 'text-accent'}`} />
+                        </div>
+                        <div className="flex-grow">
+                          <h4 className="font-semibold text-lg mb-1">{option.title}</h4>
+                          <p className="text-muted-foreground mb-3">{option.description}</p>
+                          <div className="flex items-center text-primary font-medium">
+                            <span>{option.action}</span>
+                            <ArrowRight className="h-4 w-4 ml-2" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
 
