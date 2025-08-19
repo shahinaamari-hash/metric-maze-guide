@@ -16,7 +16,12 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/cf7a7287-9236-4896-bb09-d0472276ff98.png" 
+              alt="Data Vista Logo" 
+              className="h-8 w-8"
+            />
             <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               Data Vista
             </span>
