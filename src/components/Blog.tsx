@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, TrendingUp, BarChart3, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
@@ -12,7 +13,8 @@ const blogPosts = [
     date: "2024-01-15",
     readTime: "8 min read",
     featured: true,
-    icon: BarChart3
+    icon: BarChart3,
+    slug: "/blog/ga4-implementation-guide"
   },
   {
     id: 2,
@@ -22,7 +24,8 @@ const blogPosts = [
     date: "2024-01-10",
     readTime: "6 min read",
     featured: false,
-    icon: Target
+    icon: Target,
+    slug: "/blog/attribution-modeling-guide"
   },
   {
     id: 3,
@@ -32,7 +35,8 @@ const blogPosts = [
     date: "2024-01-05",
     readTime: "10 min read",
     featured: true,
-    icon: TrendingUp
+    icon: TrendingUp,
+    slug: "/blog/server-side-tracking-guide"
   },
   {
     id: 4,
@@ -42,7 +46,8 @@ const blogPosts = [
     date: "2023-12-28",
     readTime: "7 min read",
     featured: false,
-    icon: BarChart3
+    icon: BarChart3,
+    slug: "/blog/looker-studio-migration-guide"
   },
   {
     id: 5,
@@ -52,7 +57,8 @@ const blogPosts = [
     date: "2023-12-20",
     readTime: "9 min read",
     featured: false,
-    icon: Target
+    icon: Target,
+    slug: "#"
   },
   {
     id: 6,
@@ -62,7 +68,8 @@ const blogPosts = [
     date: "2023-12-15",
     readTime: "5 min read",
     featured: false,
-    icon: TrendingUp
+    icon: TrendingUp,
+    slug: "#"
   }
 ];
 
@@ -88,37 +95,39 @@ export default function Blog() {
           <h3 className="text-2xl font-bold mb-8">Featured Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredPosts.map((post) => (
-              <Card key={post.id} className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ring-2 ring-primary/10">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 rounded-lg bg-gradient-primary flex-shrink-0">
-                      <post.icon className="h-6 w-6 text-white" />
+              <Link key={post.id} to={post.slug}>
+                <Card className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ring-2 ring-primary/10">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 rounded-lg bg-gradient-primary flex-shrink-0">
+                        <post.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <Badge variant="secondary">{post.category}</Badge>
                     </div>
-                    <Badge variant="secondary">{post.category}</Badge>
-                  </div>
-                  <CardTitle className="text-xl mb-2">{post.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {post.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="h-4 w-4" />
-                      <span>{new Date(post.date).toLocaleDateString('en-GB', { 
-                        day: 'numeric', 
-                        month: 'long', 
-                        year: 'numeric' 
-                      })}</span>
+                    <CardTitle className="text-xl mb-2">{post.title}</CardTitle>
+                    <CardDescription className="text-base">
+                      {post.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>{new Date(post.date).toLocaleDateString('en-GB', { 
+                          day: 'numeric', 
+                          month: 'long', 
+                          year: 'numeric' 
+                        })}</span>
+                      </div>
+                      <span>{post.readTime}</span>
                     </div>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <Button variant="outline" className="w-full">
-                    Read Article
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
+                    <Button variant="outline" className="w-full">
+                      Read Article
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
@@ -128,36 +137,38 @@ export default function Blog() {
           <h3 className="text-2xl font-bold mb-8">All Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {regularPosts.map((post) => (
-              <Card key={post.id} className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-2 rounded-lg bg-accent/20 flex-shrink-0">
-                      <post.icon className="h-5 w-5 text-accent" />
+              <Link key={post.id} to={post.slug}>
+                <Card className="cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-2 rounded-lg bg-accent/20 flex-shrink-0">
+                        <post.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <Badge variant="outline">{post.category}</Badge>
                     </div>
-                    <Badge variant="outline">{post.category}</Badge>
-                  </div>
-                  <CardTitle className="text-lg mb-2">{post.title}</CardTitle>
-                  <CardDescription>
-                    {post.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="h-4 w-4" />
-                      <span>{new Date(post.date).toLocaleDateString('en-GB', { 
-                        day: 'numeric', 
-                        month: 'short' 
-                      })}</span>
+                    <CardTitle className="text-lg mb-2">{post.title}</CardTitle>
+                    <CardDescription>
+                      {post.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>{new Date(post.date).toLocaleDateString('en-GB', { 
+                          day: 'numeric', 
+                          month: 'short' 
+                        })}</span>
+                      </div>
+                      <span>{post.readTime}</span>
                     </div>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <Button variant="ghost" size="sm" className="w-full">
-                    Read More
-                    <ArrowRight className="h-3 w-3 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
+                    <Button variant="ghost" size="sm" className="w-full">
+                      Read More
+                      <ArrowRight className="h-3 w-3 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
