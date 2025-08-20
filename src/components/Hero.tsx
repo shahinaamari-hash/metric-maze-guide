@@ -35,14 +35,10 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-            <a href="https://calendly.com/datavista" target="_blank" rel="noopener noreferrer" className="text-white">
-              Get Started Today
-            </a>
+            Get Started Today
           </Button>
           <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-            <a href="mailto:contact@datavista.co.uk" className="text-current">
-              View Our Work
-            </a>
+            View Our Work
           </Button>
         </div>
 

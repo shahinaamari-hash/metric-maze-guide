@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Data Vista Brand Colors - Matching Logo Gradient */
+    /* Data Vista Brand Colors - Professional Analytics Theme */
     --background: 0 0% 100%;
     --foreground: 225 15% 10%;
 
@@ -18,19 +18,19 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 225 15% 10%;
 
-    /* Primary: Logo Pink */
-    --primary: 325 85% 55%;
+    /* Primary: Professional Deep Blue */
+    --primary: 225 85% 35%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 325 85% 65%;
+    --primary-glow: 225 85% 50%;
 
-    /* Secondary: Logo Purple */
-    --secondary: 260 85% 50%;
+    /* Secondary: Analytics Purple */
+    --secondary: 250 85% 40%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 225 15% 96%;
     --muted-foreground: 225 15% 45%;
 
-    /* Accent: Complementary Teal */
+    /* Accent: Data Visualization Teal */
     --accent: 180 85% 45%;
     --accent-foreground: 0 0% 100%;
 
@@ -39,15 +39,15 @@ All colors MUST be HSL.
 
     --border: 225 15% 90%;
     --input: 225 15% 90%;
-    --ring: 325 85% 55%;
+    --ring: 225 85% 35%;
 
-    /* Design System Enhancements - Logo Inspired */
-    --gradient-primary: linear-gradient(135deg, hsl(325 85% 55%), hsl(260 85% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(180 85% 45%), hsl(325 85% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(325 85% 55% / 0.05), hsl(260 85% 50% / 0.05));
+    /* Design System Enhancements */
+    --gradient-primary: linear-gradient(135deg, hsl(225 85% 35%), hsl(250 85% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 85% 45%), hsl(225 85% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(225 85% 35% / 0.05), hsl(250 85% 40% / 0.05));
     
-    --shadow-elegant: 0 10px 30px -10px hsl(325 85% 55% / 0.3);
-    --shadow-glow: 0 0 40px hsl(325 85% 65% / 0.2);
+    --shadow-elegant: 0 10px 30px -10px hsl(225 85% 35% / 0.3);
+    --shadow-glow: 0 0 40px hsl(225 85% 50% / 0.2);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -80,11 +80,11 @@ All colors MUST be HSL.
     --popover: 225 25% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 325 85% 60%;
+    --primary: 225 85% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 325 85% 70%;
+    --primary-glow: 225 85% 60%;
 
-    --secondary: 260 85% 55%;
+    --secondary: 250 85% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 225 25% 12%;
@@ -98,15 +98,15 @@ All colors MUST be HSL.
 
     --border: 225 25% 15%;
     --input: 225 25% 15%;
-    --ring: 325 85% 60%;
+    --ring: 225 85% 50%;
 
-    /* Dark mode gradients - Logo Inspired */
-    --gradient-primary: linear-gradient(135deg, hsl(325 85% 60%), hsl(260 85% 55%));
-    --gradient-accent: linear-gradient(135deg, hsl(180 85% 50%), hsl(325 85% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(325 85% 60% / 0.1), hsl(260 85% 55% / 0.1));
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(225 85% 50%), hsl(250 85% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(180 85% 50%), hsl(225 85% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(225 85% 50% / 0.1), hsl(250 85% 50% / 0.1));
     
-    --shadow-elegant: 0 10px 30px -10px hsl(325 85% 60% / 0.4);
-    --shadow-glow: 0 0 40px hsl(325 85% 70% / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(225 85% 50% / 0.4);
+    --shadow-glow: 0 0 40px hsl(225 85% 60% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

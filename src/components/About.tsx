@@ -77,9 +77,7 @@ export default function About() {
             </div>
 
             <Button variant="hero" size="lg" className="mb-8">
-              <a href="https://calendly.com/datavista" target="_blank" rel="noopener noreferrer" className="text-white">
-                Start Your Analytics Journey
-              </a>
+              Start Your Analytics Journey
             </Button>
           </div>
 
