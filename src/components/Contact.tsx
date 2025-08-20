@@ -16,7 +16,8 @@ const contactOptions = [
     icon: Mail,
     title: "Email Us",
     description: "Get a detailed proposal within 24 hours",
-    action: "hello@datavista.agency",
+    action: "info@datavista.co.uk",
+    href: "mailto:info@datavista.co.uk",
     primary: true
   },
   {
@@ -24,6 +25,7 @@ const contactOptions = [
     title: "Book a Call",
     description: "30-minute strategy session to discuss your needs",
     action: "Schedule Free Consultation",
+    href: "https://calendly.com/datavista",
     primary: false
   },
   {
@@ -78,7 +80,11 @@ export default function Contact() {
             <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
             <div className="space-y-6 mb-12">
               {contactOptions.map((option, index) => (
-                <Card key={index} className={`cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ${option.primary ? 'ring-2 ring-primary/20' : ''}`}>
+                <Card 
+                  key={index} 
+                  className={`cursor-pointer hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 ${option.primary ? 'ring-2 ring-primary/20' : ''}`}
+                  onClick={() => option.href && window.open(option.href, '_blank')}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className={`p-3 rounded-lg flex-shrink-0 ${option.primary ? 'bg-gradient-primary' : 'bg-accent/20'}`}>
@@ -163,7 +169,17 @@ export default function Contact() {
                   </p>
                 </div>
 
-                <Button variant="hero" size="lg" className="w-full">
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={() => {
+                    // Create mailto link with form data
+                    const subject = "New Project Inquiry";
+                    const body = "Please find my project details below and contact me to discuss further.";
+                    window.open(`mailto:romain@datavista.co.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+                  }}
+                >
                   Send Message
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>

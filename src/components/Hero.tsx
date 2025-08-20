@@ -57,7 +57,7 @@ export default function Hero() {
             <div className="text-sm text-muted-foreground">Support Available</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary">5+</div>
+            <div className="text-3xl font-bold text-primary">10+</div>
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
         </div>
